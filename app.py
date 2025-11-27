@@ -393,7 +393,7 @@ def show_detail_page(supabase: Client, law_id: str):
         meta_cols.append(("Citation", law["citation"]))
     meta_cols.append(("State", state_display))
     if law.get("url"):
-        meta_cols.append(("Source", f'<a href="{law["url"]}" target="_blank" style="color: #1e3a5f;">View Original</a>'))
+        meta_cols.append(("Source", f'<a href="https://law.justia.com{law["url"]}" target="_blank" style="color: #1e3a5f;">View Original</a>'))
 
     cols = st.columns(len(meta_cols))
     for i, (label, value) in enumerate(meta_cols):
